@@ -119,8 +119,20 @@ export default function HomePage() {
       <Navbar isAuthenticated={isAuthenticated} />
 
       {/* Hero Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32">
-        <div className="text-center">
+      <section className="relative py-20 sm:py-32 overflow-hidden">
+        {/* Background image (India themed) */}
+        <div
+          className="absolute inset-0 bg-center bg-cover opacity-20 dark:opacity-25"
+          style={{
+            backgroundImage:
+              "url('https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1600&q=60')",
+          }}
+          aria-hidden="true"
+        />
+        {/* Gradient overlay for readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/50 to-white/0 dark:from-gray-900/70 dark:via-gray-900/50 dark:to-gray-900/0" aria-hidden="true" />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-200">
             Yojana Sahayak AI
           </h1>
@@ -131,13 +143,13 @@ export default function HomePage() {
             <div className="flex items-center justify-center gap-4">
               <Link
                 href="/signup"
-                className="px-8 py-3 bg-gray-900 dark:bg-gray-800 text-white rounded-lg hover:bg-gray-800 dark:hover:bg-gray-700 transition-colors duration-200 font-semibold text-lg shadow-lg hover:shadow-xl"
+                className="px-8 py-3 rounded-lg bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white transition-[colors,shadow,transform] duration-200 font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-0.5"
               >
                 Sign Up
               </Link>
               <Link
                 href="/login"
-                className="px-8 py-3 bg-gray-900 dark:bg-gray-800 text-white rounded-lg hover:bg-gray-800 dark:hover:bg-gray-700 transition-colors duration-200 font-semibold text-lg shadow-lg hover:shadow-xl"
+                className="px-8 py-3 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-[colors,shadow,transform] duration-200 font-semibold text-lg shadow hover:shadow-lg hover:-translate-y-0.5"
               >
                 Sign In
               </Link>
@@ -166,15 +178,15 @@ export default function HomePage() {
               return (
                 <div
                   key={index}
-                  className="flex flex-col items-center p-4 bg-white dark:bg-gray-700 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-200 cursor-pointer group"
+                  className="flex flex-col items-center p-4 bg-white/80 dark:bg-gray-700/80 backdrop-blur rounded-xl shadow-sm hover:shadow-xl border border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-500 transition-all duration-200 cursor-pointer group focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
                 >
                   <div className="text-4xl mb-3 group-hover:scale-110 transition-transform duration-200">
                     {category.emoji}
                   </div>
-                  <h3 className="text-sm font-semibold text-gray-900 dark:text-white text-center mb-1 transition-colors duration-200">
+                  <h3 className="text-sm font-semibold text-gray-900 dark:text-white text-center mb-1 transition-colors duration-200 group-hover:text-blue-700 dark:group-hover:text-blue-300">
                     {category.label}
                   </h3>
-                  <p className="text-xs text-gray-600 dark:text-gray-400 text-center transition-colors duration-200">
+                  <p className="text-xs text-gray-600 dark:text-gray-400 text-center transition-colors duration-200 group-hover:text-gray-700 dark:group-hover:text-gray-300">
                     {category.description}
                   </p>
                 </div>
@@ -191,31 +203,33 @@ export default function HomePage() {
             Featured Government Schemes
           </h2>
           {featuredSchemes.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {featuredSchemes.map((scheme) => (
-                <div
-                  key={scheme.id}
-                  className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-200 border border-gray-200 dark:border-gray-700"
-                >
-                  <div className="mb-3">
-                    <span className="inline-block px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-xs font-semibold">
-                      {scheme.category}
-                    </span>
-                  </div>
-                  <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2 transition-colors duration-200">
-                    {scheme.schemeName}
-                  </h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 line-clamp-2 transition-colors duration-200">
-                    {scheme.description}
-                  </p>
-                  <Link
-                    href={isAuthenticated ? "/dashboard" : "/signup"}
-                    className="inline-flex items-center text-sm font-medium text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+            <div className="relative overflow-hidden scroll-mask">
+              <div className="flex gap-6 animate-scroll-x will-change-transform">
+                {[...featuredSchemes, ...featuredSchemes].map((scheme, idx) => (
+                  <div
+                    key={`${scheme.id}-${idx}`}
+                    className="min-w-[260px] sm:min-w-[300px] lg:min-w-[340px] bg-white/80 dark:bg-gray-800/80 backdrop-blur rounded-xl p-6 shadow-sm hover:shadow-xl border border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-500 transition-all duration-200 hover:-translate-y-0.5"
                   >
-                    Learn More <ArrowRight className="w-4 h-4 ml-1" />
-                  </Link>
-                </div>
-              ))}
+                    <div className="mb-3">
+                      <span className="inline-block px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-xs font-semibold">
+                        {scheme.category}
+                      </span>
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2 transition-colors duration-200">
+                      {scheme.schemeName}
+                    </h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 line-clamp-2 transition-colors duration-200">
+                      {scheme.description}
+                    </p>
+                    <Link
+                      href={isAuthenticated ? "/dashboard" : "/signup"}
+                      className="inline-flex items-center text-sm font-semibold text-gray-900 dark:text-white hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-200 underline underline-offset-4 decoration-transparent hover:decoration-current"
+                    >
+                      Learn More <ArrowRight className="w-4 h-4 ml-1 transition-transform duration-200" />
+                    </Link>
+                  </div>
+                ))}
+              </div>
             </div>
           ) : (
             <div className="text-center py-12">

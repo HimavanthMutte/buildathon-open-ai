@@ -93,7 +93,7 @@ export default function DashboardPage() {
     <ProtectedRoute>
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors duration-200">
         {/* Header */}
-        <header className="bg-white dark:bg-gray-800 shadow-md border-b border-gray-200 dark:border-gray-700 transition-colors duration-200">
+        <header className="bg-white/70 dark:bg-gray-900/60 backdrop-blur-md shadow-md border-b border-gray-200/70 dark:border-gray-800/70 transition-colors duration-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
             {/* User Profile and Theme Toggle - Top Right */}
             <div className="flex justify-end items-center gap-3 mb-4">
@@ -160,7 +160,7 @@ export default function DashboardPage() {
                 setState("");
                 setLanguage("en");
               }}
-              className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium text-sm self-start sm:self-auto transition-colors duration-200"
+              className="text-blue-700 dark:text-blue-300 hover:text-blue-800 dark:hover:text-blue-200 font-semibold text-sm self-start sm:self-auto transition-colors duration-200 underline underline-offset-4 decoration-transparent hover:decoration-current"
             >
               Clear all filters
             </button>
@@ -213,7 +213,7 @@ export default function DashboardPage() {
                 setState("");
                 setLanguage("en");
               }}
-              className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium transition-colors duration-200"
+              className="text-blue-700 dark:text-blue-300 hover:text-blue-800 dark:hover:text-blue-200 font-semibold transition-colors duration-200 underline underline-offset-4 decoration-transparent hover:decoration-current"
             >
               Clear all filters
             </button>

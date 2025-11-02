@@ -250,7 +250,7 @@ function ResetPasswordForm() {
               <button
                 type="submit"
                 disabled={loading || !token}
-                className="w-full bg-blue-600 dark:bg-blue-500 hover:bg-blue-700 dark:hover:bg-blue-600 text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 text-base"
+                className="w-full rounded-lg bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-3 px-4 transition-[colors,shadow,transform] duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 text-base shadow-sm hover:shadow hover:-translate-y-0.5"
               >
                 {loading ? (
                   <>
@@ -282,7 +282,7 @@ function ResetPasswordForm() {
               {/* Login Link */}
               <Link
                 href="/login"
-                className="block w-full text-center bg-blue-600 dark:bg-blue-500 hover:bg-blue-700 dark:hover:bg-blue-600 text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-200"
+                className="block w-full text-center rounded-lg bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-3 px-4 transition-[colors,shadow,transform] duration-200 shadow-sm hover:shadow hover:-translate-y-0.5"
               >
                 Go to Login
               </Link>

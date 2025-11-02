@@ -20,3 +20,23 @@ body {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+/* Featured carousel utilities */
+@keyframes scroll-x {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-scroll-x {
+  animation: scroll-x 14s linear infinite;
+}
+
+.scroll-mask {
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+          mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+}
+
+/* Pause scrolling when hovering the carousel container */
+.carousel:hover .animate-scroll-x {
+  animation-play-state: paused;
+}

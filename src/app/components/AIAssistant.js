@@ -98,7 +98,7 @@ export default function AIAssistant({ schemes }) {
       {/* AI Assistant Button */}
       <button
         onClick={() => setIsOpen(true)}
-        className="flex items-center gap-2 px-4 py-3 sm:px-6 sm:py-3 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105"
+        className="flex items-center gap-2 px-4 py-3 sm:px-6 sm:py-3 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
       >
         <Bot className="w-5 h-5 sm:w-6 sm:h-6" />
         <span className="hidden sm:inline">AI Assistant 🤖</span>
@@ -108,7 +108,7 @@ export default function AIAssistant({ schemes }) {
       {/* Chat Modal */}
       {isOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 dark:bg-black dark:bg-opacity-70 flex items-center justify-center z-50 p-4">
-          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl w-full max-w-2xl h-[600px] flex flex-col transition-colors duration-200">
+          <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-md border border-gray-200/70 dark:border-gray-700/70 rounded-2xl shadow-2xl w-full max-w-2xl h-[600px] flex flex-col transition-colors duration-200">
             {/* Header */}
             <div className="bg-gradient-to-r from-purple-600 to-blue-600 dark:from-purple-700 dark:to-blue-700 text-white p-4 rounded-t-2xl flex items-center justify-between">
               <div className="flex items-center gap-3">
@@ -136,8 +136,8 @@ export default function AIAssistant({ schemes }) {
                   <div
                     className={`max-w-[80%] p-3 rounded-lg ${
                       msg.role === "user"
-                        ? "bg-blue-600 dark:bg-blue-500 text-white rounded-br-none"
-                        : "bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-bl-none"
+                        ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-br-none shadow"
+                        : "bg-white/80 dark:bg-gray-800/80 backdrop-blur border border-gray-200 dark:border-gray-700 text-gray-800 dark:text-gray-200 rounded-bl-none"
                     } transition-colors duration-200`}
                   >
                     <p className="text-sm whitespace-pre-wrap">{msg.content}</p>
@@ -146,8 +146,8 @@ export default function AIAssistant({ schemes }) {
               ))}
               {loading && (
                 <div className="flex justify-start">
-                  <div className="bg-gray-100 dark:bg-gray-700 p-3 rounded-lg rounded-bl-none transition-colors duration-200">
-                    <Loader2 className="w-5 h-5 text-gray-600 dark:text-gray-300 animate-spin" />
+                  <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur border border-gray-200 dark:border-gray-700 p-3 rounded-lg rounded-bl-none transition-colors duration-200">
+                    <Loader2 className="w-5 h-5 text-blue-600 dark:text-blue-400 animate-spin" />
                   </div>
                 </div>
               )}
@@ -155,19 +155,19 @@ export default function AIAssistant({ schemes }) {
 
             {/* Input */}
             <div className="p-4 border-t border-gray-200 dark:border-gray-700 transition-colors duration-200">
-              <div className="flex gap-2">
+              <div className="flex gap-2 items-center rounded-xl bg-white/70 dark:bg-gray-800/70 backdrop-blur border border-gray-200 dark:border-gray-700 px-3 py-2">
                 <input
                   type="text"
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
-                  onKeyPress={(e) => e.key === "Enter" && handleSend()}
+                  onKeyDown={(e) => e.key === "Enter" && handleSend()}
                   placeholder="Ask me about government schemes..."
-                  className="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent outline-none bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-colors duration-200"
+                  className="flex-1 px-2 py-2 bg-transparent border-0 focus:outline-none focus-visible:ring-0 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
                 />
                 <button
                   onClick={handleSend}
                   disabled={loading || !input.trim()}
-                  className="px-4 py-2 bg-blue-600 dark:bg-blue-500 hover:bg-blue-700 dark:hover:bg-blue-600 disabled:bg-gray-300 dark:disabled:bg-gray-600 disabled:text-gray-500 dark:disabled:text-gray-400 text-white rounded-lg transition-colors flex items-center gap-2"
+                  className="px-4 py-2 rounded-lg bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white transition-[colors,shadow,transform] duration-200 disabled:opacity-50 disabled:cursor-not-allowed shadow-sm hover:shadow"
                 >
                   <Send className="w-4 h-4" />
                 </button>

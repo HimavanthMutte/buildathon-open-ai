@@ -33,18 +33,6 @@ export default function Navbar({ isAuthenticated }) {
             >
               Categories
             </Link>
-            <Link
-              href="/#about"
-              className="text-gray-800 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white font-medium transition-colors duration-200 relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 hover:after:w-full after:bg-gray-900 dark:after:bg-white after:transition-all after:duration-200"
-            >
-              About
-            </Link>
-            <Link
-              href="/#contact"
-              className="text-gray-800 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white font-medium transition-colors duration-200 relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 hover:after:w-full after:bg-gray-900 dark:after:bg-white after:transition-all after:duration-200"
-            >
-              Contact
-            </Link>
           </div>
 
           {/* Right Side - Auth Buttons or User Profile */}
@@ -113,20 +101,6 @@ export default function Navbar({ isAuthenticated }) {
               onClick={() => setMobileMenuOpen(false)}
             >
               Categories
-            </Link>
-            <Link
-              href="/#about"
-              className="block text-gray-800 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white font-medium transition-colors duration-200"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              About
-            </Link>
-            <Link
-              href="/#contact"
-              className="block text-gray-800 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white font-medium transition-colors duration-200"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Contact
             </Link>
 
             {/* Mobile Auth Buttons */}

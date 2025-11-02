@@ -61,7 +61,7 @@ export default function SchemeCard({ scheme }) {
     }
   };
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-gray-100 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-600 flex flex-col h-full">
+    <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 p-6 border border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-600 hover:-translate-y-0.5 flex flex-col h-full">
       {/* Content wrapper - grows to fill space */}
       <div className="flex-grow">
         {/* Header */}
@@ -151,7 +151,7 @@ export default function SchemeCard({ scheme }) {
         href={scheme.applyLink}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center justify-center gap-2 w-full bg-blue-600 dark:bg-blue-500 hover:bg-blue-700 dark:hover:bg-blue-600 text-white font-semibold py-3 rounded-lg transition-colors duration-200 mt-4"
+        className="flex items-center justify-center gap-2 w-full rounded-lg bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-3 transition-[colors,shadow,transform] duration-200 mt-4 shadow-sm hover:shadow"
       >
         Apply Now
         <ExternalLink className="w-4 h-4" />

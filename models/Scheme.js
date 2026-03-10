@@ -14,6 +14,12 @@ const SchemeSchema = new mongoose.Schema(
     applyLink: { type: String },
     description: { type: String },
     languageSupport: [{ type: String }],
+    // Cache for translated content: Map<languageCode, { schemeName, description, benefits, eligibility }>
+    translations: {
+      type: Map,
+      of: Object,
+      default: {},
+    },
   },
   { timestamps: true }
 );

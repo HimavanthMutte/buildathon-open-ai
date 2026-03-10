@@ -40,7 +40,7 @@ export default function SavedSchemesPage() {
     try {
       setLoading(true);
       const response = await fetch("/api/auth/saved-schemes");
-      
+
       if (!response.ok) {
         if (response.status === 401) {
           router.push("/login");
@@ -165,7 +165,7 @@ export default function SavedSchemesPage() {
                   ({filteredSchemes.length} found)
                 </span>
               </h2>
-              
+
               {(searchQuery || category || state || language !== "en") && (
                 <button
                   onClick={() => {
@@ -266,7 +266,7 @@ export default function SavedSchemesPage() {
         <footer className="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 mt-12 transition-colors duration-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
             <p className="text-center text-gray-600 dark:text-gray-400 text-sm transition-colors duration-200">
-              © 2025 Yojana Sahayak AI - Empowering citizens with government schemes
+              © 2026 Yojana Sahayak AI - Empowering citizens with government schemes
             </p>
           </div>
         </footer>

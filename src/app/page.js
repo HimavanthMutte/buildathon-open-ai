@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Navbar from "./components/Navbar";
 import SchemeCard from "./components/SchemeCard";
-import AIAssistant from "./components/AIAssistant";
 import { GraduationCap, Wheat, Heart, Users, Home, Briefcase, Rocket, ArrowRight, AlertCircle, Loader2 } from "lucide-react";
 
 export default function HomePage() {
@@ -89,12 +88,9 @@ export default function HomePage() {
   };
 
   const handleAskAssistant = () => {
-    // Scroll to AI assistant or open it
+    // Scroll to schemes or open it
     if (isAuthenticated) {
-      const aiButton = document.querySelector('[aria-label*="AI"]');
-      if (aiButton) {
-        aiButton.click();
-      }
+      router.push("/dashboard#schemes");
     } else {
       router.push("/login");
     }
@@ -253,7 +249,7 @@ export default function HomePage() {
             onClick={handleAskAssistant}
             className="px-8 py-3 bg-gray-900 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-800 dark:hover:bg-gray-600 transition-colors duration-200 font-semibold text-lg shadow-lg hover:shadow-xl"
           >
-            Ask Assistant
+            Explore Schemes
           </button>
         </div>
       </section>
@@ -262,17 +258,11 @@ export default function HomePage() {
       <footer className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 py-8 transition-colors duration-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-center text-gray-600 dark:text-gray-400 text-sm transition-colors duration-200">
-            © 2025 Yojana Sahayak AI - Empowering citizens with government schemes
+            © 2026 Yojana Sahayak AI - Empowering citizens with government schemes
           </p>
         </div>
       </footer>
 
-      {/* Floating AI Assistant Button - Only show if authenticated */}
-      {isAuthenticated && (
-        <div className="fixed bottom-6 right-6 z-50">
-          <AIAssistant schemes={schemes} />
-        </div>
-      )}
     </div>
   );
 }

@@ -151,7 +151,7 @@ export default function SchemeCard({ scheme }) {
         href={scheme.applyLink}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center justify-center gap-2 w-full rounded-lg bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-3 transition-[colors,shadow,transform] duration-200 mt-4 shadow-sm hover:shadow"
+        className="flex items-center justify-center gap-2 w-full rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 transition-[colors,shadow,transform] duration-200 mt-4 shadow-sm hover:shadow"
       >
         Apply Now
         <ExternalLink className="w-4 h-4" />

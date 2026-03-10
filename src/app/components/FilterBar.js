@@ -108,11 +108,11 @@ export default function FilterBar({
 
       {/* Language Selector */}
       <div className="flex items-center gap-2 w-full sm:w-auto">
-        <Languages className="w-4 h-4 sm:w-5 sm:h-5 text-purple-600 dark:text-purple-400 flex-shrink-0 transition-colors duration-200" />
+        <Languages className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600 dark:text-emerald-400 flex-shrink-0 transition-colors duration-200" />
         <select
           value={language}
           onChange={(e) => setLanguage(e.target.value)}
-          className="flex-1 sm:flex-initial min-w-[140px] px-3 sm:px-4 py-2 sm:py-2.5 border border-purple-300 dark:border-purple-600 rounded-lg focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400 focus:border-transparent outline-none bg-white dark:bg-gray-700 text-gray-900 dark:text-white cursor-pointer transition-all hover:border-purple-400 dark:hover:border-purple-500 text-sm sm:text-base duration-200"
+          className="flex-1 sm:flex-initial min-w-[140px] px-3 sm:px-4 py-2 sm:py-2.5 border border-emerald-300 dark:border-emerald-600 rounded-lg focus:ring-2 focus:ring-emerald-500 dark:focus:ring-emerald-400 focus:border-transparent outline-none bg-white dark:bg-gray-700 text-gray-900 dark:text-white cursor-pointer transition-all hover:border-emerald-400 dark:hover:border-emerald-500 text-sm sm:text-base duration-200"
         >
           {languages.map((lang) => (
             <option key={lang.code} value={lang.code}>

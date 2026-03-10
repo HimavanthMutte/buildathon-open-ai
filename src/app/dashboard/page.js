@@ -90,9 +90,15 @@ export default function DashboardPage() {
 
   return (
     <ProtectedRoute>
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors duration-200">
+      <div className="relative min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors duration-200 overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-center bg-cover opacity-5 dark:opacity-[0.03] pointer-events-none"
+        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1600&q=60')" }}
+      />
+
         {/* Header */}
-        <header className="bg-white/70 dark:bg-gray-900/60 backdrop-blur-md shadow-md border-b border-gray-200/70 dark:border-gray-800/70 transition-colors duration-200">
+        <header className="relative z-10 bg-white/70 dark:bg-gray-900/60 backdrop-blur-md shadow-md border-b border-gray-200/70 dark:border-gray-800/70 transition-colors duration-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
             {/* User Profile and Theme Toggle - Top Right */}
             <div className="flex justify-end items-center gap-3 mb-4">
@@ -141,7 +147,7 @@ export default function DashboardPage() {
         </header>
 
         {/* Main Content */}
-        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <main className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {/* Results Count */}
           <div className="mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
             <h2 className="text-xl sm:text-2xl font-bold text-gray-800 dark:text-white transition-colors duration-200">
@@ -226,7 +232,7 @@ export default function DashboardPage() {
         </main>
 
         {/* Footer */}
-        <footer className="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 mt-12 transition-colors duration-200">
+        <footer className="relative z-10 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 mt-12 transition-colors duration-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
             <p className="text-center text-gray-600 dark:text-gray-400 text-sm transition-colors duration-200">
               © 2026 Yojana Sahayak AI - Empowering citizens with government schemes

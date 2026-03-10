@@ -53,7 +53,7 @@ export default function Navbar({ isAuthenticated }) {
                 </Link>
                 <Link
                   href="/login"
-                  className="px-4 py-2 rounded-lg bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-sm hover:shadow transition-all duration-200"
+                  className="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white shadow-sm hover:shadow transition-all duration-200"
                 >
                   Sign In
                 </Link>
@@ -123,7 +123,7 @@ export default function Navbar({ isAuthenticated }) {
                 </Link>
                 <Link
                   href="/login"
-                  className="block w-full text-center px-4 py-2 rounded-lg bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-sm hover:shadow transition-all duration-200"
+                  className="block w-full text-center px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white shadow-sm hover:shadow transition-all duration-200"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Sign In

@@ -139,7 +139,7 @@ export default function HomePage() {
             <div className="flex items-center justify-center gap-4">
               <Link
                 href="/signup"
-                className="px-8 py-3 rounded-lg bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white transition-[colors,shadow,transform] duration-200 font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+                className="px-8 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white transition-[colors,shadow,transform] duration-200 font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-0.5"
               >
                 Sign Up
               </Link>

@@ -130,7 +130,7 @@ export default function HomePage() {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-200">
-            Yojana Sahayak AI
+            Yojana Sahayak
           </h1>
           <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto transition-colors duration-200">
             Empowering Citizens with Smart Access to Government Schemes
@@ -258,7 +258,7 @@ export default function HomePage() {
       <footer className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 py-8 transition-colors duration-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-center text-gray-600 dark:text-gray-400 text-sm transition-colors duration-200">
-            © 2026 Yojana Sahayak AI - Empowering citizens with government schemes
+            © 2026 Yojana Sahayak - Empowering citizens with government schemes
           </p>
         </div>
       </footer>

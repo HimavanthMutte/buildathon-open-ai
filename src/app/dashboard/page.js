@@ -108,7 +108,7 @@ export default function DashboardPage() {
 
             <div className="text-center mb-6">
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-2 transition-colors duration-200">
-                Yojana Sahayak AI
+                Yojana Sahayak
               </h1>
               <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base lg:text-lg transition-colors duration-200">
                 Discover government schemes tailored for you
@@ -235,7 +235,7 @@ export default function DashboardPage() {
         <footer className="relative z-10 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 mt-12 transition-colors duration-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
             <p className="text-center text-gray-600 dark:text-gray-400 text-sm transition-colors duration-200">
-              © 2026 Yojana Sahayak AI - Empowering citizens with government schemes
+              © 2026 Yojana Sahayak - Empowering citizens with government schemes
             </p>
           </div>
         </footer>

@@ -121,7 +121,7 @@ export default function SignupPage() {
             Create Account
           </h2>
           <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base transition-colors duration-200">
-            Sign up to get started with Yojana Sahayak AI
+            Sign up to get started with Yojana Sahayak
           </p>
         </div>
 
